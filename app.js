@@ -38,9 +38,7 @@ connection.connect((err) => {
   console.log('Conexão bem-sucedida ao banco de dados!');
 });
 
-// Router
-app.get('/', (req, res) => {
-  res.render('home');
-});
+const routes = require('./server/routes/user');
+app.use('/', routes);
 
 app.listen(port, () => console.log('App running at port 5000'));
